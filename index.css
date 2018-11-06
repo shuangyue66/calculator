@@ -1,0 +1,65 @@
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+address,cite,dfn,em,var{font-style:normal}
+code,kbd,pre,samp{font-family:courier new,courier,monospace}
+small{font-size:12px}ol,ul{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}sup{vertical-align:text-top}sub{vertical-align:text-bottom}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%}button{border-radius:0}table{border-collapse:collapse;border-spacing:0}
+button{border:0 none;}
+
+.button-wrap {
+    width: 540px;
+    height: 960px;
+    padding-left: 5px;
+    background-color: black;
+    margin: auto;  
+}
+
+.input-num {
+    color: #fff;
+    padding: 183px 25px 0 0;
+    font-size: 88px;
+    height: 88px;
+    line-height: 88px;  
+    text-align: right;
+}
+
+.common-button {
+    background-color: #343434;
+    border-color: black;
+    width: 111px;
+    height: 111px;
+    color: #fefefe;
+    font-size: 48px;
+    border-radius: 100%;
+    margin: 0 0 18px 18px;
+    float: left;
+    text-align: center;
+    transition: background-color .5s, color .5s;
+}
+
+.n÷, .n10, .n23, .n33, .n× {
+    background-color: #f19a39;
+    color: #ffffff;
+    /* margin-right: 0px; */
+}
+
+.nc, .n03, .n13 {
+    background-color: #a6a6a6;
+    color: black;
+}
+.n0 {
+    width: 241px;
+    height: 111px;
+    border-radius: 60px;
+    text-align: left;
+    padding-left: 42px;
+}
+
+.nc, .n03, .n13, .n÷ {
+    margin-top: 40px;
+}
+
+button:hover{
+     background-color: rgba(255,255,255,0.9) ;
+     color: black;
+}

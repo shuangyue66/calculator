@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>计算器</title>
+<link type="text/css" rel="stylesheet" href="index.css">
+</head>
+<body>   
+    <div class="button-wrap">
+        <p id="asd" class="input-num">0</p>
+        <button class="common-button nc">c</button>
+        <button class="common-button n03" >+/-</button>
+        <button class="common-button n13">%</button>
+        <button class="common-button n÷">÷</button>
+        <button class="common-button n7">7</button>
+        <button class="common-button n8">8</button>
+        <button class="common-button n9">9</button>
+        <button class="common-button n×">×</button>
+        <button class="common-button n4">4</button>
+        <button class="common-button n5">5</button>
+        <button class="common-button n6">6</button>
+        <button class="common-button n23">-</button>
+        <button class="common-button n1">1</button>
+        <button class="common-button n2">2</button>
+        <button class="common-button n3">3</button>
+        <button class="common-button n33">+</button>
+        <button class="common-button n0">0</button>
+        <button class="common-button nq">.</button>
+        <button class="common-button n10">=</button>
+    </div>
+    <button ></button>
+<!-- <script>
+    var showNum = 0; // 显示的数字
+    var operationNum = 0; // 运算后的答案
+    var nowname = document.getElementsByClassName("common-button");
+    var nowLen =  nowname.length;
+    var lastEnterBtn = '';
+
+    for (var i = 0; i < nowLen; i++) {
+        nowname[i].addEventListener('click', function () {
+            var nowhtml = this.innerHTML;
+
+            if (lastEnterBtn && lastEnterBtn === '=' && nowhtml !== '=') {
+                operationNum = 0
+                showNum = 0
+                lastEnterBtn = ''
+            }
+
+            outer:
+            switch (nowhtml) {
+                case 'c':
+                    showNum = 0;
+                    operationNum = 0;
+                    break;
+                case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9':
+                    if(showNum === 0){
+                        showNum = nowhtml;
+                    }else{
+                        showNum += nowhtml;
+                    }
+                    break; 
+                case '+': case '×': case '-': case '÷':
+                    operationNum = Number(showNum)
+                    showNum = ''
+                    break;
+                case '=': 
+                    inner: 
+                    switch (lastEnterBtn) {
+                        case '+':
+                            operationNum += Number(showNum)
+                            break inner;
+                        case '×':
+                            operationNum *= Number(showNum)
+                            break inner;
+                    }
+                    showNum = operationNum;
+                    break outer;
+            }
+
+            if (nowhtml === '+' || nowhtml === '×' || nowhtml === '-' || nowhtml === '÷' || nowhtml === '=') {
+                lastEnterBtn = nowhtml
+            }
+           
+            document.getElementById("asd").innerHTML = showNum;
+        });
+    }
+</script> -->
+
+<script>
+    var showNum = 0; // 显示的数字
+    var operationNum = 0; // 运算后的答案
+    var jkl = 0;
+    var nowname = document.getElementsByClassName("common-button");
+    var nowLen =  nowname.length;
+    var lastEnterBtn = '';
+    var dengyujia = 0;
+    
+    for (var i = 0; i < nowLen; i++) {
+        nowname[i].addEventListener('click', function () {
+            var nowhtml = this.innerHTML;
+            outer:
+            switch (nowhtml) {
+                case 'c':
+                    showNum = 0;
+                    operationNum = 0;
+                    chengfaNum = 0;
+                    break;
+                case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9':
+                    if(showNum === 0){
+                        showNum = nowhtml;
+                    }else if(jkl===showNum) {
+                        showNum = nowhtml;
+                    
+                    }else{
+                        showNum += nowhtml;
+                        dengyujia = showNum;
+                    }
+                    break; 
+                case '+':  case '÷': case '-': case '×' :
+                   
+                    operationNum = Number(showNum)
+                    showNum =  ''
+                    break;
+                
+                case '=': 
+                inner:
+                    switch (lastEnterBtn) {
+                    case '+':
+                        operationNum += Number(showNum)                          
+                    break inner;
+                    case '×' :
+                        operationNum *= Number(showNum)                         
+                    break inner;
+                    case '÷':
+                        operationNum /= Number(showNum)                        
+                    break inner;
+                    case '-':
+                        operationNum -= Number(showNum)                          
+                    break inner
+                    case '=':
+                        operationNum += Number(dengyujia)                       
+                    break inner;
+                    }
+                        showNum = operationNum 
+                        jkl = showNum;
+                        
+                    break outer;
+            }
+                 if (nowhtml === '+' || nowhtml === '×' || nowhtml === '-' || nowhtml === '÷' || nowhtml === '=') {
+                lastEnterBtn = nowhtml
+                }
+
+            document.getElementById("asd").innerHTML = showNum;            
+        });
+    }
+</script>
+</body>
+</html>
